@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html style="scroll-behavior: smooth;" class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>NotionGadgets | Bring Notion to your Desktop</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/css/carousel.css">
+        <link rel="stylesheet" href="/static/css/slick.css">
+        <link rel="stylesheet" href="/static/css/all-animations.css">
+        <link rel="stylesheet" href="/static/css/default.css">
+        <link rel="stylesheet" href="/static/css/style-original.css">
+        <link rel="stylesheet" href="/static/css/responsive-original.css">
+
+        <!-- gagdets -->
+        <link rel="stylesheet" href="/static/css/gadgets/gadgets-style.css">
+        <link rel="stylesheet" href="/static/css/gadgets/gadgets-theme.css">
+        <link rel="stylesheet" href="/static/css/owlcarousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="/static/css/owlcarousel/owl.theme.default.min.css">
+
+        <script src="https://kit.fontawesome.com/5fdbe9cf4b.js" crossorigin="anonymous"></script>
+
+        <!-- badge css -->
+        <style>
+        .fixed-twitter-badge {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            z-index: 9999;
+            padding: 10px; /* Add appropriate padding */
+            background-color: rgba(0, 0, 0, 0.7); /* Optional background color for better visibility */
+            border-radius: 20px;
+        }
+
+        .twitter-icon {
+            width: 18px;
+            height: 33px;
+            margin-right: 5px; /* Adjust the margin for spacing */
+        }
+
+        .twitter-text {
+            color: white; /* Text color */
+        }
+    </style>
+
+    </head>
+
+
+
+    <body style="overflow-y: scroll; overflow-x:hidden;">
+
+        <!--  ====== preloader=============================================  -->
+        <div id="preloader">
+            <div id="loading">
+                <div id="loading-center">
+                    <div id="loading-center-absolute">
+                        <div class="object" id="object_one"></div>
+                        <div class="object" id="object_two"></div>
+                        <div class="object" id="object_three"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /preloader -->
+
+
+        <!--  ====== header-area-start=======================================  -->
+        <header>
+            <div id="header-sticky" class="transparent-header special-mobile-header-bg header-area">
+                <div class="header">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-between position-relative">
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6  col-9">
+                                <div class="logo">
+                                    <a href="/" class="d-block"><img id="notion-widgets-logo" src="/static/imgs/notion-widgets-logo.svg" alt="NotionWidgets"></a>
+                                </div>
+
+                            </div><!-- /col -->
+                            <div class="col-xl-6 col-lg-6 col-md-1 d-none d-lg-flex justify-content-end position-static">
+                                <div class="main-menu">
+                                    <nav id="mobileMenu" style="display: block;">
+                                        <ul class="d-block">
+                                            <li>
+                                                <a class="nav-item" target="_blank" href="/sakura-showcase">See it in Action</a>
+                                            </li>
+                                            <li>
+                                                <a class="nav-item" href="#faq">FAQ</a>
+                                            </li>
+
+                                         </ul>
+                                    </nav>
+                                </div><!-- /main-menu -->
+                            </div><!-- /col -->
+
+                            <div class="col-xl-3  col-lg-3 col-md-6 col-sm-6 col-3 pl-lg-0 pl-xl-3">
+                                <div class="header-right d-flex align-items-center justify-content-lg-between justify-content-end">
+
+                                    <div class="ml-20 d-none d-sm-block">
+                                        <a href="#pricing" class="text-capitalize">Download</a>
+                                    </div><!-- /my-btn -->
+                                    <div class="d-block d-lg-none pl-20">
+                                        <a class="mobile-menubar theme-color" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+                                    </div>
+                                    <!-- <div class="mobile-menu"></div> -->
+                                </div><!-- /header-right -->
+                            </div>
+                        </div><!-- /row -->
+                    </div><!-- /container -->
+                </div>
+            </div><!-- /header-bottom -->
+
+
+            <!-- side-mobile-menu start -->
+            <div id="sideMobileMenu" class="side-mobile-menu white-bg pt-10 pb-30 pl-35 pr-30 pb-100">
+                <div class="d-fle justify-content-between w-100">
+                    <div class="close-icon d-inline-block float-right clear-both mt-15 mb-10">
+                        <a><span class="icon-clear theme-color"><i class="fa fa-times"></i></span></a>
+                    </div>
+                </div>
+
+                <div class="sideMobileMenuLinks">
+                    <ul>
+
+                        <li class="main-link">
+                            <a class="mean-expand mean-clicked main-side-link" href="/community-themes">Community Themes</a>
+                        </li>
+
+                        <li class="main-link">
+                            <a class="mean-expand mean-clicked main-side-link" href="/buy">Buy</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mobile-menu mt-10 w-100"></div>
+                <!-- mobile phone area -->
+                <div class="mobile-phone-contact phone-contact mb-25">
+                    <btn class="btn theme-bg text-capitalize f-18 f-700 text-white">Get Started 🚀</btn>
+                </div><!-- /mobile phone area -->
+            </div><!-- /side-mobile-menu -->
+
+            <div id="bodyGreyOut" class="body-overlay"></div>
+
+            <script>
+                function hideMenu() {
+                    var element = document.getElementById("sideMobileMenu")
+                    element.classList.remove("open-menubar");
+                    document.getElementById("bodyGreyOut").outerHTML = "";
+
+                }
+            </script>
+
+        </header>
+
+
+        <main>
+            
+
+    <!-- ====== error-area-start=========================================== -->
+    <div class="error-area mt-160 mb-160" xmlns="http://www.w3.org/1999/html">
+        <div class="container">
+
+            <div class="mt-4">
+                <div class="text-center">
+
+                    <h4 class="f-700">Thank your for purchasing Notion Gadgets <3</h4>
+                    <button type="button" class="btn btn-outline-dark mt-3">Download Lively Wallpaper></Wallpaper></button>
+                    <p class="text-muted mt-2">
+                        (The installer comes bundled with your gadgets/widgets)
+                    </p>
+                    <br/>
+                    <p>
+                        There a couple steps needed to setup your widgets after, and then you'll be all set!
+                        <br/>
+                        <p class="mt-3"><a href="https://notion.so">Check out this guide</a> and follow the steps.</p>
+                    </p>
+                    <br/>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+        </main>
+
+        <!-- ====== footer-area-start ============================================ -->
+        <footer>
+            <div class="footer-area primary-bg pt-200">
+                <div class="footer-top pb-55">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-xl-2 offset-xl-1  col-lg-2  col-md-3  col-sm-6 col-12">
+                                <div class="footer-widget f-info pb-30 ml-40 pr-20 mt-25">
+                                    <h6 class="text-capitalize f-700 mb-22">Website</h6>
+                                    <ul class="footer-info">
+                                        <li>
+                                            <a href="#screenshots" class="position-relative d-inline-block mb-2">Screenshots</a>
+                                        </li>
+                                        <li>
+                                            <a href="/buy" class="position-relative d-inline-block mb-2">Download</a>
+                                        </li>
+
+
+
+
+
+
+                                    </ul>
+                                </div>
+                            </div><!-- /col -->
+                            <div class="col-xl-2  col-lg-2  col-md-3  col-sm-6 col-12">
+                                <div class="footer-widget f-info pb-30 ml-40 pr-20 mt-25">
+                                    <h6 class="text-capitalize f-700 mb-22">Support</h6>
+                                    <ul class="footer-info">
+                                        <li>
+                                            <a href="#faq" class="position-relative d-inline-block mb-2">FAQ</a>
+                                        </li>
+                                        <li>
+                                            <span class="f-icon mr-20 mt-1"><i class="far fa-envelope"></i></span>
+                                            <a href="mailto:pechuri9@gmail.com">pechuri9@gmail.com</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div><!-- /col -->
+
+                            <div class="col-xl-5  col-lg-5  col-md-5  col-sm-6 col-12">
+                                <div class="footer-widget f-info pb-30 ml-40 pr-20 mt-25">
+                                    <h6 class="text-capitalize f-700 mb-22">Legal</h6>
+                                    <ul class="footer-info">
+                                        <li>
+                                            <a href="#faq" class="position-relative d-inline-block mb-2">Terms and Conditions</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div><!-- /col -->
+                        </div><!-- /row -->
+                    </div><!-- /container -->
+                </div>
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="copyright-area mt-20 pb-50">
+                            <div class="row align-items-center">
+                                <div class="col-xl-6  col-lg-6  col-md-6  col-sm-12 col-12 mb-10">
+                                    <div class="f-logo text-center text-md-left">
+                                        <img style="width: 150px; height: 150px;" src="/static/imgs/notion-widgets-logo.svg" alt="image">
+                                    </div><!-- /f-logo -->
+                                </div><!-- /col -->
+
+                            </div><!-- /row -->
+                            <div class="row align-items-center justify-content-between">
+                                <div class="col-xl-6  col-lg-5  col-md-12  col-sm-12 col-12">
+                                    <div class="copyright-text text-center text-lg-left mt-20 mb-20">
+                                        <p class="mb-0 secondary-color2">All rights reserved
+                                            Notion Gadgets ©  2023
+                                        </p>
+                                    </div>
+                                </div><!-- /col -->
+                                <div class="col-xl-6  col-lg-7  col-md-12  col-sm-12 col-12">
+                                    <ul class="useful-link text-center text-lg-right mt-20">
+                                        <li class="d-inline-block mb-20">
+                                            <a href="#" class="secondary-color d-inline-block">Terms &amp; Conditions</a>
+                                        </li>
+                                        <li class="d-inline-block pl-45 mb-20">
+                                            <a href="#" class="secondary-color d-inline-block">Privacy</a>
+                                        </li>
+                                    </ul><!-- social -->
+                                </div><!-- /col -->
+                            </div>
+                        </div><!-- /copyright-area -->
+                    </div><!-- /container -->
+                </div>
+            </div>
+        </footer>
+
+    <!-- All js here -->
+
+
+    <script src="/static/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/carousel.js"></script>
+    <script src="/static/js/slick.min.js"></script>
+    <script src="/static/js/jquery.meanmenu.min.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/static/js/gadgets/showcase/water-showcase.js"></script>
+    <!-- gadgets -->
+
+
+
+    <a style="background: #5996f7;" target="_blank" href="https://twitter.com/@pechu05" class="fixed-twitter-badge btn text-white">
+        <object data="your.svg" type="image/svg+xml">
+            <img class="twitter-icon" src="/static/imgs/twitter-icon.svg" alt="Twitter Icon" />
+        </object>
+        <span class="twitter-text">Made by @pechu05</span>
+    </a>
+
+    <script>
+        $(".owl-carousel").owlCarousel({
+            dots: true,
+            loop: true,
+            items: 1,
+            autoplay: true,
+            autoplayHoverPause: true
+        });
+
+        $('.showcase').owlCarousel({
+            navs: true,
+            dots: true,
+            items: 1,
+            autoplay: true,
+            autoplayHoverPause: true
+
+        })
+    </script>
+
+</body>
+</html>
