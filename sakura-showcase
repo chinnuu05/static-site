@@ -5,82 +5,32 @@
     <head>
         <link rel="stylesheet" href="/static/jqueryui/jquery-ui.min.css">
         <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-        <style>
-            /* #checkThree::before {
-                content: '';
-                position: absolute;
-                top: 6px;
-                left: 4px;
-                border-right: 3px solid transparent;
-                border-bottom: 3px solid transparent;
-                transform: rotate(45deg);
-                transform-origin: 0% 100%;
-                animation: checked-box 125ms 250ms forwards;
-                pointer-events: all;
-            }
-
-            #four + label > .checkbox {
-                border: 10px solid #1D89E7;
-                animation: bounce 250ms;
-            }
-
-
-
-            #four + label > .task-text {
-                text-decoration: line-through;
-            } */
-        </style>
         <link rel="stylesheet" href="/static/css/gadgets/gadgets.css">
-        <link rel="stylesheet" href="/static/css/gadgets/gadgets-theme.css">
-
 
 
     </head>
 
-    <body class="background-image" id="bootstrap-overrides">
-
-        <!-- background image -->
-
-        <!-- background video -->
-        <div id="background-video-container" style="display: block;" class="video-section">
-            <video id="video-elem" preload="auto" autoplay="true" loop="loop" muted="muted" poster="/static/video/showcase/cherry-video.mp4">
-                <source id="background-video" src="/static/video/showcase/cherry-video.mp4" type="video/mp4">
+        <body class="background-image" id="bootstrap-overrides">
+        <div id="background-video-container" class="video-section">
+            <video id="video-elem" preload="auto" autoplay="true" loop="loop" muted="muted">
+                <source src="/static/video/cherry-video.mp4" id="background-video" type="video/mp4">
                 Video not supported
             </video>
         </div>
 
         <div class="container">
-            <div style="position: fixed; bottom: 10px; right: 10px;" class="alert alert-info alert-dismissible fade show" role="alert">
-                <h5 class="alert-heading">Want to see how it works with Notion?</h5>
-                <hr>
-                <p>
-                    <a target="_blank" href="https://notion.so"><b><u>Check out the page</u></b></a> these gadgets are connected to.
-                    <br/>
-
-                </p>
-
-
-                <p class="mt-2">
-                    Go ahead and interact with them, the Notion page will update live!
-                </p>
-                <button style="outline: none;" type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-
-
             <div class="row">
                 <div class="col-4">
                     <div id="DatabaseGadget" class="shadow-lg p-2 mt-4 gadget">
                         <div class="p-4">
                             <textarea id="databaseText" placeholder="What's on your mind?" class="form-control" rows="3"></textarea>
                             <div class="d-flex justify-content-end mt-3">
-                                <a id="addDatabaseLink" href="notion://www.notion.so/Notion-x-Lively-Wallpaper-Demo-af17ff0a73fc4c98a51ab0133843f9a2?pvs=4" style="margin-right: 10px;" class="btn btn-outline-primary text-primary cancelBtn">
+                                <a id="addDatabaseLink" href="" style="margin-right: 10px;" class="btn btn-outline-primary cancelBtn">
                                     <svg style="margin-right: 3px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
                                     <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
                                   </svg>  View in Notion</a>
-                                <button id="addToDatabaseBtn" class="btn btn-primary">Add</button>
+                                <div id="addToDatabaseBtn" class="btn btn-primary d-flex justify-content-center align-items-center">Add</div>
                             </div>
                         </div>
                     </div>
@@ -90,37 +40,62 @@
                         <div class="col-lg-12 d-flex justify-content-center">
                             <div id="TaskGadget" class="shadow-lg p-2 mt-4 gadget">
                                 <div class="settings">
-                                    <button onclick="LoadTaskWidget();">
+                                    <div id="refresh-tasks" class="btn btn-sm btn-primary text-white rounded-circle d-flex justify-content-center align-items-center">
+
+                                        <svg id='Refresh_24' width='18' height='18' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
+                                            <g transform="matrix(0.83 0 0 0.83 12 12)" >
+                                            <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: #ffff; fill-rule: nonzero; opacity: 1;" transform=" translate(-16, -16)" d="M 16 4 C 10.886719 4 6.617188 7.160156 4.875 11.625 L 6.71875 12.375 C 8.175781 8.640625 11.710938 6 16 6 C 19.242188 6 22.132813 7.589844 23.9375 10 L 20 10 L 20 12 L 27 12 L 27 5 L 25 5 L 25 8.09375 C 22.808594 5.582031 19.570313 4 16 4 Z M 25.28125 19.625 C 23.824219 23.359375 20.289063 26 16 26 C 12.722656 26 9.84375 24.386719 8.03125 22 L 12 22 L 12 20 L 5 20 L 5 27 L 7 27 L 7 23.90625 C 9.1875 26.386719 12.394531 28 16 28 C 21.113281 28 25.382813 24.839844 27.125 20.375 Z" stroke-linecap="round" />
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <!-- <button onclick="LoadTaskWidget();">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 50 50"><g transform="translate(828 609)"><circle cx="25" cy="25" r="25" transform="translate(-828 -609)" fill="#1D89E7"></circle><g transform="translate(-6961 -295)"><path d="M6148.044-285.764h10.249" fill="none" stroke="#eaeaea" stroke-linecap="round" stroke-width="3"></path><path d="M6148.044-285.764h10.249" transform="translate(0 7.046)" fill="none" stroke="#eaeaea" stroke-linecap="round" stroke-width="3"></path></g></g></svg>
-                                    </button>
+                                    </button> -->
                                 </div>
-                                <div class="p-4">
-                                    <h3 class="task-title">Today's Tasks</h3>
+                                <div class="p-4 mt-4">
+                                    <h4 id="task-title" class="task-title">Today's Tasks</h4>
+                                    <!-- Input group -->
+                                    <div class="d-flex justify-content-center">
+                                        <div class="input-group w-auto">
+                                            <input
+                                            type="text"
+                                            class="form-control add-task-input form-control bg-white"
+                                            placeholder="Add new to-do"
+                                            aria-label="Add new task"
+                                            aria-describedby="addNewTask"
+                                            />
+                                            <div id="addNewTask" class="btn btn-primary d-flex justify-content-center align-items-center">
+                                                Add
+                                            </div>
+                                        </div>
+                                    </div>
+
+
                                     <div style="display: block;" class="task-container">
-                                        <span id="taskgadget-status">Fetching tasks...</span>
-
-                                        <!-- <input type="checkbox" id="two">
-                                        <label class="task" id="taskOne" for="two">
-                                            <span id="checkOne" class="checkbox"></span> <span class="task-text" id="strikeOne">Clean the dorm</span>
+                                        <input type="checkbox" class="input-checkbox" id="21">
+                                        <label for="21" id="21task" class="task">
+                                            <span id="21check" notion-id="6b0aa83d-e117-465f-be30-540c2b7fb33a" class="checkbox"></span>
+                                            <span id="21strike" class="task-text">my to-do</span>
                                         </label>
 
-                                        <input type="checkbox" id="three">
-                                        <label class="task" id="taskTwo" for="three">
-                                            <span id="checkTwo" class="checkbox"></span> <span class="task-text" id="strikeTwo">Work on this app!</span>
+
+                                        <input type="checkbox" class="input-checkbox" id="22">
+                                        <label for="22" id="22task" class="task">
+                                            <span id="22check" notion-id="8924421b-baee-4637-bba5-d97ca94e3bae" class="checkbox"></span>
+                                            <span id="22strike" class="task-text">second</span>
                                         </label>
 
-                                        <input type="checkbox" id="four">
-                                        <label class="task" id="taskThree" for="four">
-                                            <span id="checkThree" class="checkbox"></span> <span class="task-text" id="strikeThree">Study for Chem Exam</span>
-                                        </label>
 
-                                        <input type="checkbox" id="five">
-                                        <label class="task" id="taskFour" for="five">
-                                            <span id="checkFour" class="checkbox"></span> <span class="task-text" id="strikeFour">ENED HW due tonight</span>
-                                        </label> -->
+                                        <input type="checkbox" class="input-checkbox" id="23">
+                                        <label for="23" id="23task" class="task">
+                                            <span id="23check" notion-id="9808cc42-1e87-4e6f-a450-b29d16a43351" class="checkbox"></span>
+                                            <span id="23strike" class="task-text">third </span>
+                                        </label>
                                     </div>
 
                                 </div>
+
+
                             </div>
                         </div>
 
@@ -130,29 +105,8 @@
                     <div class="row">
                         <div class="col-lg-9">
                             <div id="WaterGadget" class="shadow-lg p-2 mt-4 gadget">
-                                <!-- <div class="settings">
-                                    <button onclick="alert('hello');">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 50 50"><g transform="translate(828 609)"><circle cx="25" cy="25" r="25" transform="translate(-828 -609)" fill="#1D89E7"></circle><g transform="translate(-6961 -295)"><path d="M6148.044-285.764h10.249" fill="none" stroke="#eaeaea" stroke-linecap="round" stroke-width="3"></path><path d="M6148.044-285.764h10.249" transform="translate(0 7.046)" fill="none" stroke="#eaeaea" stroke-linecap="round" stroke-width="3"></path></g></g></svg>
-                                    </button>
-                                </div> -->
-                                <!-- <div class="row mb-5">
-                                    <div class="col-12">
-                                        <div>
-                                            <div id="button" class="btn btn-primary btn-sm water-btn">
-                                                <img style="width: 12px; height: 12px;" src="images/chevron-up.svg">
-                                            </div>
-
-                                            <div id="button2" class="btn btn-primary btn-sm water-btn">
-                                                <img style="width: 12px; height: 12px;" src="images/chevron-down.svg">
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>                    -->
-
                                 <div style="margin-left: 10px;" class="ml-3">
-                                    <span class="d-block fw-bold">🌢 water tracker</span>
+                                    <span id="water-gadget-title" class="d-block fw-bold">🌢 water tracker</span>
                                     <span id="count" style="font-size: 14px; margin-top: 5px; font-family:Verdana, Geneva, Tahoma, sans-serif;" class="d-block text-muted">0%</span>
                                     <span style="visibility: hidden;" id="actual-value">20</span>
                                 </div>
@@ -185,30 +139,16 @@
                                           <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
                                         </symbol>
                                     </svg>
-                                    <!-- <div class="d-flex justify-content-center">
-                                        <span id="liter-label" style="z-index: 10;"  class="water-label text-dark">0 Liters</span>
-                                    </div>
 
-                                    <div class="d-flex justify-content-center">
-                                        <span style="z-index: 10;" id="count" class="water-caption text-muted">0</span>
-                                        <span id="count-label" style="z-index: 10;" class="water-caption text-muted font-weight-bold">% of your goal</span>
-                                        <span style="visibility: hidden;" id="actual-value">25</span>
-                                    </div> -->
                                     <div class="water" id="water">
-                                    <svg class="water__wave water__wave_back" viewBox="0 0 560 20">
-                                        <use xlink:href="#wave"></use>
-                                    </svg>
-                                    <svg class="water__wave water__wave_front" viewBox="0 0 560 20">
-                                        <use xlink:href="#wave"></use>
-                                    </svg>
-                                    <div id="bubble-height" style="height: 50%;" class="water__inner">
-                                        <!-- <div class="bubble-small bubble_1"></div>
-                                        <div class="bubble-large bubble_2"></div>
-                                        <div class="bubble-normal bubble_3"></div>
-                                        <div class="bubble-small bubble_4"></div>
-                                        <div class="bubble-normal bubble_5"></div> -->
-
-                                    </div>
+                                        <svg class="water__wave water__wave_back" viewBox="0 0 560 20">
+                                            <use xlink:href="#wave"></use>
+                                        </svg>
+                                        <svg class="water__wave water__wave_front" viewBox="0 0 560 20">
+                                            <use xlink:href="#wave"></use>
+                                        </svg>
+                                        <div id="bubble-height" style="height: 50%;" class="water__inner">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -217,29 +157,14 @@
                 </div>
             </div>
         </div>
-
-
-<!--
-        <div><img src="images/fancy-coffee.svg"></div> -->
-	<!--
-        <div>
-            <h1 id="pleasework">first test</h1>
-            <p>This should look like Notion's fonts</p>
-            <h1 id="output2">second test</h1>
-            <h1 id="output3">third test</h1>
-            <button>PRETYT PELASE WORK</button>
-           <iframe src="https://indify.co/widgets/live/progressBar/2eZO4cs09IrzmvIZtYJk"></iframe>
-            <img src="images/fancy-coffee.svg">
-        </div> -->
-
     </body>
 
     <script src="/static/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="/static/jqueryui/jquery-ui.min.js"></script>
+    <script src="/static/js/gadgets/main.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
     <script src="/static/js/gadgets/savesettings.js"></script>
     <script src="/static/js/gadgets/loadsettings.js"></script>
-    <script src="/static/js/gadgets/gadgets-showcase.js"></script>
     <script src="/static/js/gadgets/water.js"></script>
     <script src="/static/js/gadgets/themeloader.js"></script>
 
