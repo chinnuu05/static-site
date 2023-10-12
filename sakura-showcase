@@ -25,7 +25,7 @@
                         <div class="p-4">
                             <textarea id="databaseText" placeholder="What's on your mind?" class="form-control" rows="3"></textarea>
                             <div class="d-flex justify-content-end mt-3">
-                                <a id="addDatabaseLink" href="" style="margin-right: 10px;" class="btn btn-outline-primary cancelBtn">
+                                <a disabled id="addDatabaseLink" href="" style="margin-right: 10px;" class="btn btn-outline-primary cancelBtn">
                                     <svg style="margin-right: 3px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
                                     <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
@@ -39,20 +39,18 @@
                     <div class="row">
                         <div class="col-lg-12 d-flex justify-content-center">
                             <div id="TaskGadget" class="shadow-lg p-2 mt-4 gadget">
-                                <div class="settings">
-                                    <div id="refresh-tasks" class="btn btn-sm btn-primary text-white rounded-circle d-flex justify-content-center align-items-center">
 
-                                        <svg id='Refresh_24' width='18' height='18' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/>
-                                            <g transform="matrix(0.83 0 0 0.83 12 12)" >
-                                            <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: #ffff; fill-rule: nonzero; opacity: 1;" transform=" translate(-16, -16)" d="M 16 4 C 10.886719 4 6.617188 7.160156 4.875 11.625 L 6.71875 12.375 C 8.175781 8.640625 11.710938 6 16 6 C 19.242188 6 22.132813 7.589844 23.9375 10 L 20 10 L 20 12 L 27 12 L 27 5 L 25 5 L 25 8.09375 C 22.808594 5.582031 19.570313 4 16 4 Z M 25.28125 19.625 C 23.824219 23.359375 20.289063 26 16 26 C 12.722656 26 9.84375 24.386719 8.03125 22 L 12 22 L 12 20 L 5 20 L 5 27 L 7 27 L 7 23.90625 C 9.1875 26.386719 12.394531 28 16 28 C 21.113281 28 25.382813 24.839844 27.125 20.375 Z" stroke-linecap="round" />
-                                            </g>
-                                        </svg>
-                                    </div>
-                                    <!-- <button onclick="LoadTaskWidget();">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 50 50"><g transform="translate(828 609)"><circle cx="25" cy="25" r="25" transform="translate(-828 -609)" fill="#1D89E7"></circle><g transform="translate(-6961 -295)"><path d="M6148.044-285.764h10.249" fill="none" stroke="#eaeaea" stroke-linecap="round" stroke-width="3"></path><path d="M6148.044-285.764h10.249" transform="translate(0 7.046)" fill="none" stroke="#eaeaea" stroke-linecap="round" stroke-width="3"></path></g></g></svg>
-                                    </button> -->
-                                </div>
-                                <div class="p-4 mt-4">
+
+
+
+
+
+
+
+
+
+
+                                <div class="p-4">
                                     <h4 id="task-title" class="task-title">Today's Tasks</h4>
                                     <!-- Input group -->
                                     <div class="d-flex justify-content-center">
