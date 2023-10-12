@@ -25,6 +25,8 @@ var water_inner_values = [50, 65, 90, 110];
 
 var highestLiterLabel;
 
+var testing = 0;
+
 var water_inner_values = {
   "starting": 50,
   "level1": 50,
@@ -51,10 +53,6 @@ var water_values = {
   "level2": 56,
   "level3": 80,
 };
-
-
-var currentWaterValue;
-
 function Level3Click(e) {
   console.log("level3 clicked");
   ChangeWaterLevelWithAnimation(e.target.id);
@@ -81,43 +79,22 @@ function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-function SetLiterLabels() {
-
-  // if request fails go with default 1,2,3
-  $.get("http://localhost:1234/getliterlabels", function(data) {
-    var labels = JSON.parse(data).Result;
-    labels.forEach((label, i)  => {
-      document.getElementById("level" + (i + 1)).innerText = label + "L";
-
-      liter_labels.push(label);
-    });
-
-    console.log("Set liter labels to: " + labels);
-
-  })
-}
-
 function LoadWaterLevel() {
   // check if a value has been stored for today
   // if there is load it
   // if not set water to 0, and
 
-  waterIntakeItem = localStorage.getItem(GetCurrentDate());
-  SetLiterLabels();
+  waterIntakeItem = localStorage.getItem("WaterIntake");
   var waterIntake;
   if (waterIntakeItem != null) {
     console.log("Loading previously stored water value for today");
     waterIntake = JSON.parse(waterIntakeItem);
     waterValue = waterIntake["WaterLevel"];
-    ChangeWaterLevelWithoutAnimation(waterValue);
+    console.log("Watervalue: " + waterValue);
 
-
-    // if (waterIntake["Date"] == GetCurrentDate()) {
-    //   console.log("Date's match, loading the water value");
-    //   ChangeWaterLevelWithAnimation(waterValue);
-    // } else {
-    //   console.log("date's dont match");
-    // }
+    if (waterValue != "level0") {
+      ChangeWaterLevelWithoutAnimation(waterValue);
+    }
   } else console.log("No prevously stored water value");
 }
 
@@ -137,7 +114,7 @@ function ChangeWaterLevelWithoutAnimation(id) {
   // console.log(waterInnerCounter);
   // water.querySelector('.water__inner').style.height = waterInnerCounter + "%";
 
-  cnt.innerHTML = target;
+  cnt.innerHTML = target + "%";
 
   // isInProgress = false;
   actual.innerHTML = targetLevel;
@@ -194,112 +171,19 @@ function ChangeWaterLevelWithAnimation(id) {
       isInProgress = false;
       water.querySelector('.water__inner').style.height = waterInnerTarget + "%";
 
-
-      var today = localStorage.getItem(GetCurrentDate());
-      var formatted = JSON.parse(today);
-
+      // send update request to server
+      // server checks if a dt
       // check if today's local storage already exists
-      if (today == null) {
-        console.log("today's first water click")
-        // does not exist, first time hitting level3
-        var isAdded = false;
+      console.log("Setting liter value: " + GetLiterValue(id));
 
-        // if level 3 then we add right now
-        if (id == "level3") isAdded = true;
-        today = {
-          "Date": GetCurrentDate(),
-          "WaterLevel": id,
-          "IsAdded": isAdded,
-          "Liters": GetLiterValue(id)
-        };
-  
-        var DatesToLog = []
-        DatesToLog.push(today);
-  
+      var today = {
+        "Date": GetCurrentDate(),
+        "WaterLevel": id,
+        "IsAdded": true,
+        "Liters": GetLiterValue(id)
+      };
 
-        
-        if (isAdded) {
-          console.log("It was leevl3, updating Notion database");
-          if (UpdateWaterDatabase(DatesToLog)) {
-            console.log("update water database succeeded");
-          }
-          else {
-            console.log("update water databsae fialed");
-            today = {
-              "Date": GetCurrentDate(),
-              "WaterLevel": id,
-              "IsAdded": false,
-              "Liters": GetLiterValue(id)
-  
-            };
-          }
-        }
-
-        // set the local storage for today
-        localStorage.setItem(GetCurrentDate(), JSON.stringify(today));
-
-      }
-
-      // previously stored local storage
-      else {
-
-        if (formatted["WaterLevel"] != id) {
-          console.log("not first water click, but id's are not the same");
-          var addRightNow = false;
-
-          var isAdded = formatted["IsAdded"];
-          console.log("Was this date already added: " + isAdded);
-
-
-    
-          var DatesToLog = []
-          
-          if (id == "level3" && !isAdded) {
-            isAdded = true;
-            addRightNow = true;
-            // update the notion database (if it's level3)
-            
-          } else console.log("Did not add, id: " + id + " , was added: " + isAdded);
-
-          // if level 3 then we add right now
-          today = {
-            "Date": GetCurrentDate(),
-            "WaterLevel": id,
-            "IsAdded": isAdded,
-            "Liters": GetLiterValue(id)
-
-          };
-          DatesToLog.push(today);
-
-          if (addRightNow) {
-            console.log("It was leevl3 and not previously added, updating Notion database");
-            var status = UpdateWaterDatabase(DatesToLog);
-            console.log("update stsatus: " + status);
-            if (status) {
-              console.log("update water database succeeded");
-            }
-            else {
-              console.log("update water databsae fialed");
-              today = {
-                "Date": GetCurrentDate(),
-                "WaterLevel": id,
-                "IsAdded": false,
-                "Liters": GetLiterValue(id)
-    
-              };
-            }
-          }
-
-          // set the local storage for today
-          localStorage.setItem(GetCurrentDate(), JSON.stringify(today));
-        }
-
-        else {
-          // it's the same, do nothing
-
-
-        }
-      }
+      localStorage.setItem("WaterIntake", JSON.stringify(today));
     } 
     
 
@@ -319,7 +203,7 @@ function ChangeWaterLevelWithAnimation(id) {
     // console.log(waterInnerCounter);
     // water.querySelector('.water__inner').style.height = waterInnerCounter + "%";
 
-    cnt.innerHTML = counter + (-changeBy);
+    cnt.innerHTML = counter + (-changeBy) + "%";
 
     // isInProgress = false;
     actual.innerHTML = actualValue;
@@ -328,114 +212,13 @@ function ChangeWaterLevelWithAnimation(id) {
 
 
 
-
-function UpdateWaterDatabase(DatesToLog) {
-
-  // waterlog format
-  //   "Date": GetCurrentDate(),
-  //   "WaterLevel": id,
-  //   "IsAdded": isAdded
-  console.log("Sending: " + DatesToLog);
-  var request = $.post("http://localhost:1234/logwatergoal", JSON.stringify(DatesToLog), function() {
-    
-    // on success
-    console.log("Posted /logwatergoal");
-    // remove these added items from local storage
-    console.log("removing the posted dates");
-    DatesToLog.forEach(function(date) {
-      localStorage.removeItem(data["Date"]);
-      console.log("Removed item: " + data["Date"]);
-    })
-    return true;
-  }, "application/json");
-
-  request.fail(function() {
-    // error dispatch
-    console.log("logwatergoal failed");
-    return false;
-  })
-}
-
-
-function FetchPastWaterLogs() {
-  var today = new Date();
-  var month = today.getMonth() + 1;
-  var day = today.getDate();
-
-  if (day < 10) day = '0' + day;
-  if (month < 10) month = '0' + month;
-  var DatesToLog = [];
-
-  for (i = 1; i < day; i++) {
-    // pull all the days in this month so far up to today
-    var iteratedDay = i;
-
-    if (iteratedDay < 10) iteratedDay = '0' + iteratedDay;
-
-
-    var loadedDate = i + '/' + month + "/" + today.getFullYear()
-    var item = localStorage.getItem(loadedDate);
-
-
-
-    if (item != null) {
-      var json = JSON.parse(item);
-
-      if (!json["IsAdded"]) {
-        if (json["WaterLevel"] == "level3") {
-          // shouldnt happen
-          // console.log("Date is level3 but wasn't added. WTF?")
-        }
-
-        // date hasn't been added to the water database yet, add it to the list
-        // console.log("Adding date: " + json["Date"]);
-        DatesToLog.push(json);
-        // console.log(DatesToLog.length);
-
-        // update it to added
-        var update = json;
-        update["IsAdded"] = true;
-        // console.log("Setting " + loadedDate + " to isADded = true");
-        localStorage.setItem(loadedDate, JSON.stringify(update));
-
-      }
-
-    else {
-      // console.log(json["Date"] + " was already added. Not adding again.");
-    }
-    }
-    else {
-      // console.log("Date: " + loadedDate + " was null. No local storage item for it.");
-    }
-
-  }
-  console.log("Dates that need to be added: ");
-  console.log(DatesToLog);
-  if (DatesToLog.length > 0) {
-    UpdateWaterDatabase(DatesToLog);
-  }
-
-
-
-
-
-  // ex: current date 29/09/2023
-  // pull all days leading up to 29
-  // if level3 then assume that it's already added to the database
-  // if not, then call it and change to isAdded = True
-
-
-
-}
-
-
 function GetCurrentDate() {
   const today = new Date();
   const yyyy = today.getFullYear();
   let mm = today.getMonth() + 1; // Months start at 0!
   let dd = today.getDate();
 
-  // dd = dd - 1;
+  dd = dd + testing;
 
   if (dd < 10) dd = '0' + dd;
   if (mm < 10) mm = '0' + mm;

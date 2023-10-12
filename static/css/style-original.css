@@ -148,9 +148,7 @@
 
 
 .social-proof-caption {
-	font-size: 16px;
 	font-family: lively-bold;
-	color: grey;
 }
 
 
@@ -161,11 +159,11 @@
 
 }
 
-@media screen and (min-width: 400px) and (max-width: 576px) {
-	.social-proof-caption {
-		font-size: 14px;
-	}
-}
+/*@media screen and (min-width: 400px) and (max-width: 576px) {*/
+/*	.social-proof-caption {*/
+/*		font-size: 14px;*/
+/*	}*/
+/*}*/
 
 
 @media (max-width: 1024px){

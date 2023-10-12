@@ -35,7 +35,6 @@ function SetDefaultSize(gadget) {
     taskGadgetDefaultSize = [259.521, 265.094];
     waterGadgetDefaultSize = [208.99, 257];
     databaseGadgetDefaultSize = [282.99, 198.6];
-    console.log("Setting defaults for: " + gadget);
 
     switch (gadget) {
         case "WaterGadget":
@@ -68,8 +67,8 @@ function LoadGadgets() {
             $('#' + gadget).css("top", pos[0] + "px");
             $('#' + gadget).css("left", pos[1] + "px");
         } else {
+
             SetDefaultPosition(gadget);
-            // console.log(gadget + " didn't have position saved. Nothing to load.")
         }
 
         var unparsedSize = localStorage.getItem(gadget + "_size");
@@ -80,12 +79,16 @@ function LoadGadgets() {
             $('#' + gadget).css("width", size[0] + "px");
             $('#' + gadget).css("height", size[1] + "px");   
 
-            // console.log('Set size for ' + gadget);
-    
         } else {
             SetDefaultSize(gadget);
-
-            // console.log(gadget + " didn't have size saved. Nothing to load.")
         }
     })
+
+    // set text area height 
+    var textAreaHeight = localStorage.getItem("databaseTextHeight");
+    if (textAreaHeight != null) {
+        console.log("Setting text area height to: " + textAreaHeight);
+        var textArea = document.getElementById('databaseText');
+        textArea.style.height = textAreaHeight;
+    } else console.log("text area height no saved");
 }

@@ -1409,7 +1409,7 @@
      .feature-bg,.work-bg,.sp-offer-bg {
           padding-top: 28px;
           background-image: none !important;
-          background-color: #f0f6fb;
+          /*background-color: #f0f6fb;*/
      }
      .feature-bg{padding-top: 70px;}
      .sp-feature-bg.feature-bg {padding-bottom: 35px;padding-top: 25px;}

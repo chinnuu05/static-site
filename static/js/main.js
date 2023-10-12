@@ -41,12 +41,12 @@
         var scroll = $(wind).scrollTop();
         if (scroll < 2) {
             sticky.removeClass("sticky-menu");
-                document.getElementById("notion-widgets-logo").src="/static/imgs/notion-widgets-logo.svg";
+                document.getElementById("notion-widgets-logo").src="static/imgs/notion-widgets-logo.svg";
 
 
         } else {
             $("#header-sticky").addClass("sticky-menu");
-            document.getElementById("notion-widgets-logo").src="/static/imgs/plain-logo.svg";
+            document.getElementById("notion-widgets-logo").src="static/imgs/plain-logo.svg";
 
         }
     });
