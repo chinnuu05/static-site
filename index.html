@@ -1,0 +1,755 @@
+
+
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html style="scroll-behavior: smooth;" class="no-js" lang="en">
+    <head>
+
+
+        <!-- simple analytics -->
+        <!-- 100% privacy-first analytics -->
+        <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+        <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>NotionGadgets | Bring Notion to your Desktop</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/css/slick.css">
+        <link rel="stylesheet" href="static/css/all-animations.css">
+        <link rel="stylesheet" href="static/css/default.css">
+        <link rel="stylesheet" href="static/css/style-original.css">
+        <link rel="stylesheet" href="static/css/responsive-original.css">
+
+        <!-- gagdets -->
+        <link rel="stylesheet" href="static/css/gadgets/gadgets-demo.css">
+        <link rel="stylesheet" href="static/css/owlcarousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="static/css/owlcarousel/owl.theme.default.min.css">
+
+        <script src="https://kit.fontawesome.com/5fdbe9cf4b.js" crossorigin="anonymous"></script>
+
+        <!-- badge css -->
+        <style>
+        .fixed-twitter-badge {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            z-index: 9999;
+            padding: 10px; /* Add appropriate padding */
+            background-color: rgba(0, 0, 0, 0.7); /* Optional background color for better visibility */
+            border-radius: 20px;
+        }
+
+        .twitter-icon {
+            width: 18px;
+            height: 33px;
+            margin-right: 5px; /* Adjust the margin for spacing */
+        }
+
+        .twitter-text {
+            color: white; /* Text color */
+        }
+    </style>
+
+    </head>
+
+
+
+    <body style="overflow-y: scroll; overflow-x:hidden;">
+
+        <!--  ====== preloader=============================================  -->
+        <div id="preloader">
+            <div id="loading">
+                <div id="loading-center">
+                    <div id="loading-center-absolute">
+                        <div class="object" id="object_one"></div>
+                        <div class="object" id="object_two"></div>
+                        <div class="object" id="object_three"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /preloader -->
+
+
+        <!--  ====== header-area-start=======================================  -->
+        <header>
+            <div id="header-sticky" class="transparent-header special-mobile-header-bg header-area">
+                <div class="header">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-between position-relative">
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6  col-9">
+                                <div class="logo">
+                                    <a href="/" class="d-block"><img id="notion-widgets-logo" src="static/imgs/notion-widgets-logo.svg" alt="NotionWidgets"></a>
+                                </div>
+
+                            </div><!-- /col -->
+                            <div class="col-xl-6 col-lg-6 col-md-1 d-none d-lg-flex justify-content-end position-static">
+                                <div class="main-menu">
+                                    <nav id="mobileMenu" style="display: block;">
+                                        <ul class="d-block">
+                                            <li>
+                                                <a class="nav-item" target="_blank" href="/sakura-showcase">See it in Action</a>
+                                            </li>
+                                            <li>
+                                                <a class="nav-item" href="#faq">FAQ</a>
+                                            </li>
+
+                                         </ul>
+                                    </nav>
+                                </div><!-- /main-menu -->
+                            </div><!-- /col -->
+
+                            <div class="col-xl-3  col-lg-3 col-md-6 col-sm-6 col-3 pl-lg-0 pl-xl-3">
+                                <div class="header-right d-flex align-items-center justify-content-lg-between justify-content-end">
+
+                                    <div class="ml-20 d-none d-sm-block">
+                                        <a href="#pricing" class="text-capitalize">Download</a>
+                                    </div><!-- /my-btn -->
+                                    <div class="d-block d-lg-none pl-20">
+                                        <a class="mobile-menubar theme-color" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+                                    </div>
+                                    <!-- <div class="mobile-menu"></div> -->
+                                </div><!-- /header-right -->
+                            </div>
+                        </div><!-- /row -->
+                    </div><!-- /container -->
+                </div>
+            </div><!-- /header-bottom -->
+
+
+            <!-- side-mobile-menu start -->
+            <div id="sideMobileMenu" class="side-mobile-menu white-bg pt-10 pb-30 pl-35 pr-30 pb-100">
+                <div class="d-fle justify-content-between w-100">
+                    <div class="close-icon d-inline-block float-right clear-both mt-15 mb-10">
+                        <a><span class="icon-clear theme-color"><i class="fa fa-times"></i></span></a>
+                    </div>
+                </div>
+
+                <div class="sideMobileMenuLinks">
+                    <ul>
+
+                        <li class="main-link">
+                            <a class="mean-expand mean-clicked main-side-link" href="/community-themes">Community Themes</a>
+                        </li>
+
+                        <li class="main-link">
+                            <a class="mean-expand mean-clicked main-side-link" href="/buy">Buy</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mobile-menu mt-10 w-100"></div>
+                <!-- mobile phone area -->
+                <div class="mobile-phone-contact phone-contact mb-25">
+                    <btn class="btn theme-bg text-capitalize f-18 f-700 text-white">Get Started 🚀</btn>
+                </div><!-- /mobile phone area -->
+            </div><!-- /side-mobile-menu -->
+
+            <div id="bodyGreyOut" class="body-overlay"></div>
+
+            <script>
+                function hideMenu() {
+                    var element = document.getElementById("sideMobileMenu")
+                    element.classList.remove("open-menubar");
+                    document.getElementById("bodyGreyOut").outerHTML = "";
+
+                }
+            </script>
+
+        </header>
+
+
+        <main>
+            
+
+    <style>
+
+    @media only screen and (max-width: 767px) and (min-width: 576px) {
+        .margin-adjuster {
+            margin-top: -60px;
+        }
+    }
+
+
+    </style>
+
+
+
+
+    <div style="background:
+    linear-gradient(180deg, #FFF0 0%, #FFFF 100%) 0 0/100dvw 100dvh,
+    conic-gradient(from 90deg at 1px 1px,#0000 90deg,#d9e5fa 0) 0 0/50px 50px;"  class="single-slider slider-height1 d-flex align-items-center container-wrapper margin-adjuster">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6  col-lg-6  col-md-6  col-sm-12 col-12  d-flex align-items-center">
+                    <div class="slider-content mt--30 position-relative">
+                        <div>
+                            <h7 class="mb-3 lively-text"><a href="/"><span class="badge badge-primary lively-text p-2 theme-bg">Powered by<img style="width: 18px; height: 18px;" src="static/imgs/lively-logo.ico" class="ml-2">
+                                <span>Lively Wallpaper</span></span></a>
+                            </h7>
+                        </div>
+
+
+                        <div>
+                            <h1 class="f-700 pb-22 mt-2 landing-text">Widgets for your desktop that sync with Notion</h1>
+                            <p>Customizable Windows widgets connected to your Notion pages</p>
+
+                        </div>
+
+
+                        <div class="mt-2">
+                            <div class="my-btn mb-3">
+                                <a target="_blank" href="/sakura-showcase" class="btn theme-bg text-capitalize">See it in action</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div><!-- /col -->
+                <div class="col-xl-6 col-lg-6  col-md-6  col-sm-12 col-12  d-flex align-items-center ">
+
+                    <div class="owl-carousel owl-theme">
+
+                        <div style="width: 374px; height: 316.094px;" id="TaskGadget" class="shadow-lg p-2 mt-4 gadget">
+                            <div class="p-4">
+                                <h5 class="task-title">Today's Tasks</h5>
+                                <div style="display: block;" class="task-container">
+                                    <input class="input-checkbox" type="checkbox" id="0"/>
+                                    <label for="0" id="0task" class="task">
+                                        <span id="0check" notion-id="710d9a60-3c50-4172-a818-9a051295a681" class="checkbox"></span>
+                                        <span id="0strike" class="task-text"> Post on r/Notion</span>
+                                    </label>
+
+                                    <input class="input-checkbox" type="checkbox" id="1"/>
+                                    <label for="1" id="1task" class="task">
+                                        <span id="1check" notion-id="69b9017e-56f5-42ad-a4e2-2202132670a4" class="checkbox"></span>
+                                        <span id="1strike" class="task-text"> Post on Product Hunt</span></label>
+
+                                    <input class="input-checkbox" type="checkbox" id="2"/>
+                                    <label for="2" id="2task" class="task"><span id="2check" notion-id="81a6036c-3d56-4493-ae8f-77076b718597" class="checkbox"></span>
+                                        <span id="2strike" class="task-text"> Work on more gadgets</span>
+                                    </label>
+                                    <input class="input-checkbox" type="checkbox" id="3"/>
+                                    <label for="3" id="3task" class="task">
+                                        <span id="3check" notion-id="0f4e8d56-675c-4960-962c-f5c650700554" class="checkbox"></span>
+                                        <span id="3strike" class="task-text"> Start next project!</span>
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div style="width: 219px;height: 276px;" id="WaterGadget" class="shadow-lg p-2 mt-4 gadget">
+                            <div class="water-text" style="margin-left: 10px;" class="ml-3">
+                                <span id="water-gadget-title" class="d-block">Water Tracker</span>
+                                <span id="count" style="font-size: 14px; margin-top: 5px; font-family:Verdana, Geneva, Tahoma, sans-serif;" class="d-block text-muted">0%</span>
+                                <span style="visibility: hidden;" id="actual-value">20</span>
+                            </div>
+
+                            <div style="z-index: 99999;" class="mb-5">
+                                <div style="margin-top: -60px;" class="water-lines d-flex">
+                                    <img src="static/imgs/gadgets/line.svg">
+                                    <div id="level3" style="font-size: 15px;" class="btn water-btn2 btn-outline-dark btn-sm">3L</div>
+                                </div>
+                                <div style="margin-top: 0px;" class="water-lines d-flex">
+                                    <img src="static/imgs/gadgets/line.svg">
+                                    <div id="level2" style="font-size: 13px;" class="btn water-btn2 btn-outline-dark btn-sm">2L</div>
+
+                                </div>
+
+                                <div style="margin-top: 60px;" class="water-lines d-flex">
+                                    <img src="static/imgs/gadgets/line.svg">
+                                    <div id="level1" style="font-size: 11px;" class="btn water-btn2 btn-outline-dark btn-sm">1L</div>
+                                </div>
+                            </div>
+
+                            <div id="page" class="p-3 page page_animated mt-5">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" style="display: none;">
+                                    <symbol id="wave">
+                                      <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                                      <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                                      <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                                      <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                                    </symbol>
+                                </svg>
+
+                                <div class="water" id="water">
+                                    <svg class="water__wave water__wave_back" viewBox="0 0 560 20">
+                                        <use xlink:href="#wave"></use>
+                                    </svg>
+                                    <svg class="water__wave water__wave_front" viewBox="0 0 560 20">
+                                        <use xlink:href="#wave"></use>
+                                    </svg>
+                                    <div id="bubble-height" style="height: 50%;" class="water__inner">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 332.99px;height: 224.594px;" id="DatabaseGadget" class="shadow-lg p-2 mt-4 gadget">
+                            <div class="p-4">
+                                <textarea id="databaseText" placeholder="What's on your mind today?" class="form-control" rows="5"></textarea>
+                                <div class="d-flex justify-content-end mt-3">
+                                    <a id="addDatabaseLink" href="notion://www.notion.so/Notion-x-Lively-Wallpaper-Demo-af17ff0a73fc4c98a51ab0133843f9a2?pvs=4" style="pointer-events: none; margin-right: 10px;" class="btn btn-outline-primary text-primary cancelBtn">
+                                        <svg style="margin-right: 3px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                        <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                                      </svg>  View in Notion</a>
+                                    <button id="addToDatabaseBtn" class="btn btn-primary">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div><!-- /col -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+
+    </div>
+
+    <div id="screenshots" class="screenshot-area mb-200 mt-30 pt-155">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-xl-9  col-lg-10 col-md-11  col-sm-12 col-12">
+                    <div class="title text-center">
+
+                        <h3 class="f-700 pb-30">Fully Customizable</h3>
+                        <p>Customize your gadgets however you want, go minimalistic or go sexy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center mt-5">
+                <div class="col-xl-10  col-lg-10  col-md-12  col-sm-12 col-12">
+                    <div class="owl-carousel owl-theme showcase">
+                        <div>
+                            <img src="static/imgs/showcase/showcase-img-1.png">
+                        </div>
+                        <div>
+                            <img src="static/imgs/showcase/showcase-img-2.jpg">
+                        </div>
+                    </div>
+                </div><!-- /col -->
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </div>
+
+
+
+    <div class="sp-feature-area over-hidden mt--50">
+        <div class="sp-feature-bg feature-bg bg-no-repeat pt-220 pb-95 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1800" data-background="images/feature/home1-sp-feature-bg.png" style="background-image: url(&quot;images/feature/home1-sp-feature-bg.png&quot;);">
+            <div class="container">
+                <div class="row align-items-center mt-10">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="sp-feature-content pr-xl-2 mb-10 mt-45 aos-init aos-animate" data-aos="fade-right" data-aos-duration="2000">
+                            <div class="title">
+                                <span class="theme-color f-700">Plugs into your to-dos & databases</span>
+                                <h3 class="f-700 pb-30">Easy To Install & Use</h3>
+                                <p>Create a Notion integration, enter your Notion API key, and your all set <br/><br/>Customize settings like transparency, background, and color with an easy-to-use interface</p>
+                            </div><!-- /title -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div><!-- /feature-content -->
+                    </div><!-- /col -->
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="feature-img mt-35 d-flex justify-content-center aos-init aos-animate" data-aos="fade-left" data-aos-duration="2000">
+                            <img class="d-block ml-lg-auto bounce-animate2" src="static/imgs/gadgets/customize.png" alt="image">
+                        </div><!-- /feature-img -->
+                    </div><!-- /col -->
+                </div><!-- /row -->
+            </div><!-- /container -->
+        </div>
+    </div>
+
+
+
+            <div id="pricing" class="pricing-plan-section pt-145 pb-100 over-hidden position-relative z-index1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6  col-lg-6  col-md-12  col-sm-12 col-12 d-none d-sm-block">
+                        <div class="mt-5 d-flex align-items-center">
+
+                            <h1>Thank you for supporting me</h1>
+
+                        </div><!-- /title -->
+
+                        <div>
+                            <p class="mt-4">
+                                Your support helps me improve and develop new gadgets, free for all supporters.
+                            </p>
+                        </div>
+
+
+                    </div> <!-- /col- -->
+
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-sm-flex d-lg-block text-center d-flex justify-content-center">
+                        <div class="tab-content position-relative pl-55">
+                            <div class="table-content position-relative">
+                                <div id="monthly" class="tab-pane price-table in active show">
+                                    <div class="col-inner">
+                                        <div class="price-header mb-30">
+                                            <h5 class="f-700 mb-15">Pay <span class="theme-color">Once</span>, Own <span class="theme-color">Forever</span></h5>
+                                        </div>
+                                        <div class="price mb-35">
+                                            <h1 class="text1 theme-color f-700 mb-4">$10</h1>
+                                        </div>
+                                        <ul class="price-item-list text-center d-inline-block mb-50">
+
+                                             <li class="d-inline-block d-flex align-items-center mb-12">
+                                                <span class="theme-color d-block pr-20">
+                                                    <span class=""><i class="fa fa-check"></i></span>
+                                                </span>
+                                                <p class="secondary-color mb-0">To Do, Database, Water Gadgets</p>
+                                            </li>
+
+                                            <li class="d-inline-block d-flex align-items-center mb-12">
+                                                <span class="theme-color d-block pr-20">
+                                                    <span class=""><i class="fa fa-check"></i></span>
+                                                </span>
+                                                <p class="secondary-color mb-0 xw">Track water intake in Notion</p>
+                                            </li>
+
+                                            <li class="d-inline-block d-flex align-items-center mb-12">
+                                                <span class="theme-color d-block pr-20">
+                                                    <span class=""><i class="fa fa-check"></i></span>
+                                                </span>
+                                                <p class="secondary-color mb-0">Fully Customizable</p>
+                                            </li>
+
+                                            <li class="d-inline-block d-flex align-items-center mb-12">
+                                                <span class="theme-color d-block pr-20">
+                                                    <span class=""><i class="fa fa-check"></i></span>
+                                                </span>
+                                                <p class="secondary-color mb-0">Free future gadgets</p>
+                                            </li>
+
+                                            <li class="d-inline-block d-flex align-items-center">
+                                                <span class="theme-color d-block pr-20">
+                                                    <span class=""><i class="fa fa-check"></i></span>
+                                                </span>
+                                                <p class="secondary-color mb-0">Get support on Discord</p>
+                                            </li>
+                                        </ul>
+
+                                        <div class="my-btn d-block mt-4">
+                                            <a href="#" class="btn theme-bg text-capitalize">Buy</a>
+                                        </div><!-- /my-btn -->
+
+                                    </div>
+                                </div> <!-- /#monthly -->
+                            </div> <!-- /.table-content -->
+                        </div> <!-- /.tab-content -->
+                    </div>
+                </div> <!-- /row -->
+            </div> <!-- /container -->
+        </div>
+
+<!-- ====== faq-area-start============================================ -->
+    <div id="faq" class="faq-area pt-130 mb-70 over-hidden">
+        <div class="container">
+            <div class="row mt-10">
+                <div class="col-12">
+                    <div class="faq-content mt-55 mb-50">
+                        <div class="title">
+                            <span class="theme-color f-700">Have questions?</span>
+                            <h3 class="f-700 pb-30">Frequently Asked Questions</h3>
+<!--                            <p>Bole nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>-->
+                        </div>
+                        <div class="faq-wrapper mt-40">
+                            <div class="accordion" id="accordionExample">
+                                <div class="card border-0">
+                                    <div class="card-header card-header-top rounded-0 bg-transparent p-0" id="headingOne">
+                                        <h6 class="mb-0">
+                                            <a href="#" class="btn btn-link black-color f-700 border-0 d-block text-left rounded-0 position-relative" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                What is Lively Wallpaper, is it safe?
+                                            </a>
+                                        </h6>
+                                    </div><!-- /card-header -->
+                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p class="m-0">Lively Wallpaper is open source software that let's you render videos, images, and HTML as your wallpaper. It's developed by rocksdanister. It is safe and has hundreds of thousands of downloads.</p>
+                                        </div>
+                                    </div><!-- /collapseOne -->
+                                </div><!-- /card1 -->
+
+                                <div class="card border-0">
+                                    <div class="card-header bg-transparent p-0" id="headingThree">
+                                        <h6 class="mb-0">
+                                            <a href="#" class="btn btn-link black-color f-700 border-0 d-block text-left rounded-0 position-relative collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                How do I install Notion Gadgets?
+                                            </a>
+                                        </h6>
+                                    </div><!-- /card-header -->
+
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p class="m-0">Notion Gadgets comes bundled with Lively Wallpaper, a software for rendering HTML as your background. A .exe installer of Lively Wallpaper will be provided after your purchase.</p>
+                                        </div>
+                                    </div>
+                                </div><!-- /card2 -->
+
+                                <div class="card border-0">
+                                    <div class="card-header bg-transparent p-0" id="headingTwo">
+                                        <h6 class="mb-0">
+                                            <a href="#" class="btn btn-link black-color f-700 border-0 d-block text-left rounded-0 position-relative collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                What fields can I add to my database?
+                                            </a>
+                                        </h6>
+                                    </div><!-- /card-header -->
+
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p class="m-0">Currently only adding the "Title" property of Notion databases is supported.</p>
+                                        </div>
+                                    </div>
+                                </div><!-- /card2 -->
+
+                                <div class="card border-0">
+                                    <div class="card-header bg-transparent p-0" id="headingFour">
+                                        <h6 class="mb-0">
+                                            <a href="#" class="btn btn-link black-color f-700 border-0 d-block text-left rounded-0 position-relative collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                How do I connect my Notion pages to the widgets?
+                                            </a>
+                                        </h6>
+                                    </div><!-- /card-header -->
+
+                                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p class="m-0">This is done through Notion itself, in a special template you duplicate. Check out this video for more information.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="card border-0">
+                                    <div class="card-header bg-transparent p-0" id="headingFive">
+                                        <h6 class="mb-0">
+                                            <a href="#" class="btn btn-link black-color f-700 border-0 d-block text-left rounded-0 position-relative collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                Why is Lively Wallpaper free but your widgets aren't?
+                                            </a>
+                                        </h6>
+                                    </div><!-- /card-header -->
+
+                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p class="m-0">These widgets took a lot of time to make functional, aesthetic, and connect with the Notion API. <br/><br/>
+                                                Lively Wallpaper is distributed under the GPL v3 license which allows developers to sell their own modified versions of the software, as long as the source code is provided.
+                                                <br/>
+                                                <br/>
+                                                Notion Gadgets complies with all GPL v3 licensing regulations as a GitHub fork with the modified version of Lively Wallpaper's source code is public for all to see.
+                                                The actual HTML, CSS, and JS of the gadgets are not public, but available to customers.
+
+                                                <br/>
+                                                <br/>
+                                                If you are not happy with the $10 price tag, you are free to download the <a target="_blank" href="https://github.com/chinnuu05/notionwidgets">modified version of Lively Wallpaper from GitHub</a>, which enables Notion API support, and create your own CSS/JS/HTML widgets :)
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div><!-- /card2 -->
+
+<!--                                <div class="card card-header-end border-0">-->
+<!--                                    <div class="card-header bg-transparent p-0" id="headingThree">-->
+<!--                                        <h6 class="mb-0">-->
+<!--                                            <a href="#" class="btn btn-link black-color f-700 border-0 d-block text-left rounded-0 position-relative collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">-->
+<!--                                                Why Evalo is a great startup template?-->
+<!--                                            </a>-->
+<!--                                        </h6>-->
+<!--                                    </div>-->
+
+<!--                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">-->
+<!--                                        <div class="card-body">-->
+<!--                                            <p class="m-0">Ovitae purus soda duis eu ers auctor augue ultricie conse ctetur adipisicing nisi ut aliquip ex ea commodo quat Duis aute irure dolor in reprehenderit in volupta </p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>&lt;!&ndash; /card &ndash;&gt;-->
+                            </div><!-- /accordion -->
+                        </div><!-- /faq-wrapper -->
+                    </div><!-- /faq-content -->
+                </div><!-- /col -->
+
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </div>
+    <!-- faq-area-end -->
+
+    <div class="container-fluid mt-5">
+                <div style="background:
+    linear-gradient(180deg, #FFF0 0%, #FFFF 100%) 0 0/100dvw 100dvh,
+    conic-gradient(from 90deg at 1px 1px,#0000 90deg,#d9e5fa 0) 0 0/50px 50px;" class="text-center shadow-lg">
+                    <div class="p-5">
+                        <img alt="Notion Gadgets" src="static/imgs/cube.png">
+                        <h5 class="mt-3">Ready to spice up your desktop with Notion?</h5>
+                        <div class="my-btn d-block mt-4 mb-3">
+                            <a href="#" class="btn theme-bg text-capitalize">Get Started</a>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+        </main>
+
+        <!-- ====== footer-area-start ============================================ -->
+        <footer>
+            <div class="footer-area primary-bg pt-200">
+                <div class="footer-top pb-55">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-xl-2 offset-xl-1  col-lg-2  col-md-3  col-sm-6 col-12">
+                                <div class="footer-widget f-info pb-30 ml-40 pr-20 mt-25">
+                                    <h6 class="text-capitalize f-700 mb-22">Website</h6>
+                                    <ul class="footer-info">
+                                        <li>
+                                            <a href="#screenshots" class="position-relative d-inline-block mb-2">Screenshots</a>
+                                        </li>
+                                        <li>
+                                            <a href="/buy" class="position-relative d-inline-block mb-2">Download</a>
+                                        </li>
+
+
+
+
+
+
+                                    </ul>
+                                </div>
+                            </div><!-- /col -->
+                            <div class="col-xl-2  col-lg-2  col-md-3  col-sm-6 col-12">
+                                <div class="footer-widget f-info pb-30 ml-40 pr-20 mt-25">
+                                    <h6 class="text-capitalize f-700 mb-22">Support</h6>
+                                    <ul class="footer-info">
+                                        <li>
+                                            <a href="#faq" class="position-relative d-inline-block mb-2">FAQ</a>
+                                        </li>
+                                        <li>
+                                            <span class="f-icon mr-20 mt-1"><i class="far fa-envelope"></i></span>
+                                            <a href="mailto:pechuri9@gmail.com">pechuri9@gmail.com</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div><!-- /col -->
+
+                            <div class="col-xl-5  col-lg-5  col-md-5  col-sm-6 col-12">
+                                <div class="footer-widget f-info pb-30 ml-40 pr-20 mt-25">
+                                    <h6 class="text-capitalize f-700 mb-22">Legal</h6>
+                                    <ul class="footer-info">
+                                        <li>
+                                            <a href="#faq" class="position-relative d-inline-block mb-2">Terms and Conditions</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div><!-- /col -->
+                        </div><!-- /row -->
+                    </div><!-- /container -->
+                </div>
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="copyright-area mt-20 pb-50">
+                            <div class="row align-items-center">
+                                <div class="col-xl-6  col-lg-6  col-md-6  col-sm-12 col-12 mb-10">
+                                    <div class="f-logo text-center text-md-left">
+                                        <img style="width: 150px; height: 150px;" src="static/imgs/notion-widgets-logo.svg" alt="image">
+                                    </div><!-- /f-logo -->
+                                </div><!-- /col -->
+
+                            </div><!-- /row -->
+                            <div class="row align-items-center justify-content-between">
+                                <div class="col-xl-6  col-lg-5  col-md-12  col-sm-12 col-12">
+                                    <div class="copyright-text text-center text-lg-left mt-20 mb-20">
+                                        <p class="mb-0 secondary-color2">All rights reserved
+                                            Notion Gadgets ©  2023
+                                        </p>
+                                    </div>
+                                </div><!-- /col -->
+                                <div class="col-xl-6  col-lg-7  col-md-12  col-sm-12 col-12">
+                                    <ul class="useful-link text-center text-lg-right mt-20">
+                                        <li class="d-inline-block mb-20">
+                                            <a href="#" class="secondary-color d-inline-block">Terms &amp; Conditions</a>
+                                        </li>
+                                        <li class="d-inline-block pl-45 mb-20">
+                                            <a href="#" class="secondary-color d-inline-block">Privacy</a>
+                                        </li>
+                                    </ul><!-- social -->
+                                </div><!-- /col -->
+                            </div>
+                        </div><!-- /copyright-area -->
+                    </div><!-- /container -->
+                </div>
+            </div>
+        </footer>
+
+    <!-- All js here -->
+
+
+    <script src="static/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/slick.min.js"></script>
+    <script src="static/js/jquery.meanmenu.min.js"></script>
+    <script src="static/js/main.js"></script>
+    <script src="static/js/owlcarousel/owl.carousel.min.js"></script>
+    <script src="static/js/gadgets/showcase/water-demo.js"></script>
+    <!-- gadgets -->
+
+
+
+    <a style="background: #5996f7;" target="_blank" href="https://twitter.com/@pechu05" class="fixed-twitter-badge btn text-white">
+        <object data="your.svg" type="image/svg+xml">
+            <img class="twitter-icon" src="static/imgs/twitter-icon.svg" alt="Twitter Icon" />
+        </object>
+        <span class="twitter-text">Made by @pechu05</span>
+    </a>
+
+    <script>
+        $(".owl-carousel").owlCarousel({
+            dots: true,
+            loop: false,
+            items: 1,
+            autoplay: true,
+            autoplayHoverPause: true
+        });
+
+    </script>
+
+    <style>
+        @media screen and (max-width: 600px) {
+           .fixed-twitter-badge {
+            visibility: hidden;
+            display: none;
+          }
+        }
+
+    </style>
+
+</body>
+</html>
