@@ -1,0 +1,82 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Notion Water Widget</title>
+        <link rel="stylesheet" href="static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/css/gadgets/gadgets.css">
+
+
+
+    </head>
+
+    <body class="d-flex justify-content-center align-items-center">
+        <div style="width: 209px; height: 257px;" id="WaterGadget" class="p-2 mt-4 gadget">
+            <div style="margin-left: 10px;" class="ml-3">
+                <span style="font-weight: bold;" id="water-gadget-title" class="d-block fw-bold">Water Tracker</span>
+                <span id="count" style="font-size: 14px; margin-top: 5px;" class="d-block text-muted">0%</span>
+                <span style="visibility: hidden;" id="actual-value">20</span>
+            </div>
+
+            <div style="z-index: 99999;" class="mb-5">
+                <div style="margin-top: -60px;" class="water-lines">
+                    <img alt="-" src="static/imgs/gadgets/line.svg">
+                    <div id="level3" style="font-size: 15px;" class="btn water-btn2 btn-outline-dark btn-sm">3L</div>
+                </div>
+                <div style="margin-top: 0px;" class="water-lines">
+                    <img alt="-" src="static/imgs/gadgets/line.svg">
+                    <div id="level2" style="font-size: 13px;" class="btn water-btn2 btn-outline-dark btn-sm">2L</div>
+
+                </div>
+
+                <div style="margin-top: 60px;" class="water-lines">
+                    <img alt="-" src="static/imgs/gadgets/line.svg">
+                    <div id="level1" style="font-size: 11px;" class="btn water-btn2 btn-outline-dark btn-sm">1L</div>
+                </div>
+            </div>
+
+            <div id="page" class="p-3 page page_animated mt-5">
+
+
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" style="display: none;">
+                    <symbol id="wave">
+                      <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                      <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                      <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                      <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                    </symbol>
+                </svg>
+
+                <div class="water" id="water">
+                <svg class="water__wave water__wave_back" viewBox="0 0 560 20">
+                    <use xlink:href="#wave"></use>
+                </svg>
+                <svg class="water__wave water__wave_front" viewBox="0 0 560 20">
+                    <use xlink:href="#wave"></use>
+                </svg>
+                <div id="bubble-height" style="height: 50%;" class="water__inner">
+                    <!-- <div class="bubble-small bubble_1"></div>
+                    <div class="bubble-large bubble_2"></div>
+                    <div class="bubble-normal bubble_3"></div>
+                    <div class="bubble-small bubble_4"></div>
+                    <div class="bubble-normal bubble_5"></div> -->
+
+                </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+
+    <script src="static/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/gadgets/water.js"></script>
+
+    <script>
+        waterGadgetDefaultSize = [208.99, 257];
+        $('#WaterGadget').css("width", waterGadgetDefaultSize[0] + "px");
+        $('#WaterGadget').css("height", waterGadgetDefaultSize[1] + "px");
+    </script>
+
+</html>
