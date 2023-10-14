@@ -53,6 +53,10 @@ var water_values = {
   "level2": 56,
   "level3": 80,
 };
+
+
+var currentWaterValue;
+
 function Level3Click(e) {
   ChangeWaterLevelWithAnimation(e.target.id);
 
@@ -68,9 +72,65 @@ function Level1Click(e) {
   ChangeWaterLevelWithAnimation(e.target.id);
 }
 
+// different sized bubbles randomly picked from
+var bubbleClasses = ["bubble-small", "bubble-large", "bubble-normal"];
+
 // sleep time expects milliseconds
 function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+function SetLiterLabels() {
+
+  // if request fails go with default 1,2,3
+  (function runAjax(retries, delay){
+    delay = universalDelay;
+    $.ajax({
+      type        : 'GET',
+      url         : 'http://localhost:1234/getliterlabels',
+      success: function(data) {
+        response = JSON.parse(data);
+        if (response.Success) {
+          var labels = response.Data;
+          labels.forEach((label, i)  => {
+            document.getElementById("level" + (i + 1)).innerText = label + "L";
+            liter_labels.push(label);
+          });
+        }
+
+        else {
+
+          if (retries == 0) {
+            // display error message to user
+            $('#water-gadget-title').html("Error: " + response.ErrorMessage);
+            return;
+          }
+
+          if (response.ErrorMessage == null) {
+            retries > 0 && setTimeout(function(){
+              runAjax(--retries);
+            },delay);
+          }
+
+          else {
+            $('#water-gadget-title').html("Error: " + response.ErrorMessage);
+          }
+
+
+        }
+      },
+      error: function() {
+
+        retries > 0 && setTimeout(function(){
+            runAjax(--retries);
+        },delay);
+
+        if (retries == 0) {
+        }
+      }
+    })
+
+  })(3, 100);
 }
 
 function LoadWaterLevel() {
@@ -79,6 +139,7 @@ function LoadWaterLevel() {
   // if not set water to 0, and
 
   waterIntakeItem = localStorage.getItem("WaterIntake");
+  SetLiterLabels();
   var waterIntake;
   if (waterIntakeItem != null) {
     waterIntake = JSON.parse(waterIntakeItem);
@@ -87,6 +148,7 @@ function LoadWaterLevel() {
     if (waterValue != "level0") {
       ChangeWaterLevelWithoutAnimation(waterValue);
     }
+  }
 }
 
 function GetLiterValue(id) {
@@ -99,11 +161,6 @@ function ChangeWaterLevelWithoutAnimation(id) {
   var waterInnerTarget = water_inner_values[id];
 
   water.style.transform = 'translate(0, ' + (100 - targetLevel) + '%)';
-  // water.querySelector('.water__inner').style.height = actualValue + '%';
-  // console.log("setting water_inner to: " + waterInnerCounter + "%");
-
-  // console.log(waterInnerCounter);
-  // water.querySelector('.water__inner').style.height = waterInnerCounter + "%";
 
   cnt.innerHTML = target + "%";
 
@@ -127,13 +184,8 @@ function ChangeWaterLevelWithAnimation(id) {
   var target = water_labels[id];
   var targetLevel = water_values[id];
   var waterInnerTarget = water_inner_values[id];
-  // console.log(water_inner_values[id]);
   var waterInnerCounter = parseInt(water.querySelector('.water__inner').style.height);
 
-  // console.log(document.getElementById("bubble-height").style);
-  // console.log("height: " + document.getElementById("bubble-height").style.height);
-  // console.log("Set Water inner target to: " + waterInnerTarget);
-  // console.log("Set Water inner counter to: " + waterInnerCounter);
 
   if (actualValue == targetLevel) {
     isInProgress = false;
@@ -159,7 +211,6 @@ function ChangeWaterLevelWithAnimation(id) {
       isInProgress = false;
       water.querySelector('.water__inner').style.height = waterInnerTarget + "%";
 
-
       var today = {
         "Date": GetCurrentDate(),
         "WaterLevel": id,
@@ -168,8 +219,8 @@ function ChangeWaterLevelWithAnimation(id) {
       };
 
       localStorage.setItem("WaterIntake", JSON.stringify(today));
-    } 
-    
+    }
+
 
 
 
@@ -178,23 +229,49 @@ function ChangeWaterLevelWithAnimation(id) {
     if (waterInnerCounter != waterInnerTarget) waterInnerCounter += changeBy;
 
 
-    // console.log("setting water level to: " + (100 - actualValue))
 
     water.style.transform = 'translate(0, ' + (100 - actualValue) + '%)';
-    // water.querySelector('.water__inner').style.height = actualValue + '%';
-    // console.log("setting water_inner to: " + waterInnerCounter + "%");
-
-    // console.log(waterInnerCounter);
-    // water.querySelector('.water__inner').style.height = waterInnerCounter + "%";
 
     cnt.innerHTML = counter + (-changeBy) + "%";
 
-    // isInProgress = false;
     actual.innerHTML = actualValue;
   }, 24);
 }
 
 
+
+
+function UpdateWaterDatabase(log) {
+
+
+  var logRequest = $.post("http://localhost:1234/logwatergoal", JSON.stringify(log), function(data) {
+
+
+    var response = JSON.parse(data);
+
+    if (response.Success) {
+      var title = $('#water-gadget-title').html();
+      if (title.includes("Error"))
+      {
+        $('#water-gadget-title').html('Water Tracker');
+      }
+    }
+
+    else {
+      if (response.ErrorMessage != null) {
+        // show error message
+        $('#water-gadget-title').html("Error: " + response.ErrorMessage);
+      }
+    }
+
+  });
+
+  logRequest.fail(function() {
+    // error dispatch
+
+    $('#water-gadget-title').html("Couldn't connect to Notion. Try restarting Lively Wallpaper");
+  })
+}
 
 function GetCurrentDate() {
   const today = new Date();
