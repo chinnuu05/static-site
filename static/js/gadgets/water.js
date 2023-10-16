@@ -139,7 +139,6 @@ function LoadWaterLevel() {
   // if not set water to 0, and
 
   waterIntakeItem = localStorage.getItem("WaterIntake");
-  SetLiterLabels();
   var waterIntake;
   if (waterIntakeItem != null) {
     waterIntake = JSON.parse(waterIntakeItem);
