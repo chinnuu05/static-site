@@ -130,9 +130,15 @@
 
                 <div class="sideMobileMenuLinks">
                     <ul>
-                        <li class="main-link">
-                            <a class="mean-expand mean-clicked main-side-link" href="#pricing">Download</a>
-                        </li>
+                      <li class="main-link">
+                        <a class="mean-expand mean-clicked main-side-link" target="_blank" href="sakura-showcase.html">See it in Action</a>
+                      </li>
+                      <li class="main-link">
+                          <a class="mean-expand mean-clicked main-side-link" href="#faq">FAQ</a>
+                      </li>
+                      <li class="main-link">
+                          <a class="mean-expand mean-clicked main-side-link" href="#pricing">Download</a>
+                      </li>
                     </ul>
                 </div>
 
@@ -159,7 +165,7 @@
 
     <style>
 
-    @media only screen and (max-width: 767px) and (min-width: 576px) {
+    @media only screen and (max-width: 767px){
         .margin-adjuster {
             margin-top: -60px;
         }
@@ -168,12 +174,44 @@
 
     </style>
 
+    <style>
+      
+      #heroBackground{
+        height: 100dvh;
+        min-height: 700px;
+        /* Works great in firefox, and safari. Webkit needs to catch up */
+        width: calc((50 * round(down, 100%/50,1px)) + 1px);
+        max-width: 1801px;
+      }
+      #callToAction{
+        height: calc((50px * 6) + 1px);
+        max-width: 1801px;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+        width: calc((50 * round(down, 100%/50,1px)) + 1px);
+      }
+      @media screen and (max-width:580px) {
+        div.single-slider{
+          margin-top: 90px;
+        }
+        footer > div.pt-200{
+          height: 100vh;
+          min-height: 600px;
+          padding: 0 2rem;
+          padding-top: 100px;
+        }
+        
+      }
+    </style>
 
 
 
-    <div style="background:
-    linear-gradient(180deg, #FFF0 0%, #FFFF 100%) 0 0/100dvw 100dvh,
-    conic-gradient(from 90deg at 1px 1px,#0000 90deg,#d9e5fa 0) 0 0/50px 50px;"  class="single-slider slider-height1 d-flex align-items-center container-wrapper margin-adjuster">
+
+    <div id="heroBackground" style="background:
+                  linear-gradient(180deg, #FFF0 0%, #FFFF 100%) 0 0/100dvw 100dvh,
+                  conic-gradient(from 90deg at 1px 1px,#0000 90deg,#d9e5fa 0) 0 0/50px 50px;
+                "  
+         class="single-slider slider-height1 d-flex align-items-center container-wrapper margin-adjuster">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-6  col-lg-6  col-md-6  col-sm-12 col-12  d-flex align-items-center">
@@ -340,23 +378,6 @@
                                 <h3 class="f-700 pb-30">Easy To Install & Use</h3>
                                 <p>Create a Notion integration, enter your Notion API key, and your all set <br/><br/>Customize settings like transparency, background, and color with an easy-to-use interface</p>
                             </div><!-- /title -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         </div><!-- /feature-content -->
                     </div><!-- /col -->
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
@@ -582,9 +603,13 @@
     <!-- faq-area-end -->
 
     <div class="container-fluid mt-5">
-                <div style="background:
-    linear-gradient(180deg, #FFF0 0%, #FFFF 100%) 0 0/100dvw 100dvh,
-    conic-gradient(from 90deg at 1px 1px,#0000 90deg,#d9e5fa 0) 0 0/50px 50px;" class="text-center shadow-lg">
+                <div style="
+                  background:
+                    linear-gradient(180deg, #FFF0 0%, #FFFF 100%) 0 0/100dvw 100dvh,
+                    conic-gradient(from 90deg at 1px 1px,#0000 90deg,#d9e5fa 0) 0 0/50px 50px;
+                "
+                id="callToAction"
+                class="text-center shadow-lg">
                     <div class="p-5">
                         <img alt="Notion Gadgets Logo" src="static/imgs/cube.png">
                         <h5 class="mt-3">Ready to spice up your desktop with Notion?</h5>
@@ -609,9 +634,9 @@
             <div class="footer-area primary-bg pt-200">
                 <div class="footer-top pb-55">
                     <div class="container">
-                        <div class="row">
+                        <div class="row" style="justify-content: space-between;">
 
-                            <div class="col-xl-2 offset-xl-1  col-lg-2  col-md-3  col-sm-6 col-12">
+                            <div class="col-xl-2 col-lg-2  col-md-3  col-sm-6 col-12" >
                                 <div class="footer-widget f-info pb-30 ml-40 pr-20 mt-25">
                                     <h6 class="text-capitalize f-700 mb-22">Website</h6>
                                     <ul class="footer-info">
@@ -622,24 +647,22 @@
                                             <a href="#pricing" class="position-relative d-inline-block mb-2">Buy</a>
                                         </li>
 
-
-
-
-
-
                                     </ul>
                                 </div>
                             </div><!-- /col -->
                             <div class="col-xl-2  col-lg-2  col-md-3  col-sm-6 col-12">
                                 <div class="footer-widget f-info pb-30 ml-40 pr-20 mt-25">
                                     <h6 class="text-capitalize f-700 mb-22">Support</h6>
-                                    <ul class="footer-info">
+                                    <ul class="footer-info" style="width: max-content;">
                                         <li>
                                             <a href="#faq" class="position-relative d-inline-block mb-2">FAQ</a>
                                         </li>
                                         <li>
-                                            <span class="f-icon mr-20 mt-1"><i class="far fa-envelope"></i></span>
-                                            <a href="mailto:pechuri9@gmail.com">pechuri9@gmail.com</a>
+                                            
+                                            <a href="mailto:pechuri9@gmail.com">
+                                              <i class="far fa-envelope"></i>
+                                              pechuri9@gmail.com
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
