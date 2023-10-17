@@ -178,7 +178,7 @@
       
       #heroBackground{
         height: 100dvh;
-        min-height: 700px;
+        min-height: 720px;
         /* Works great in firefox, and safari. Webkit needs to catch up */
         width: calc((50 * round(down, 100%/50,1px)) + 1px);
         max-width: 1801px;
@@ -190,13 +190,18 @@
         margin-bottom: 1rem;
         width: calc((50 * round(down, 100%/50,1px)) + 1px);
       }
+      @media screen and (min-width: 576px) and (max-width: 767px){
+        #heroBackground{
+          min-height: 1020px;
+        }
+      }
       @media screen and (max-width:580px) {
         div.single-slider{
           margin-top: 90px;
         }
         footer > div.pt-200{
           height: 100vh;
-          min-height: 600px;
+          min-height: 670px;
           padding: 0 2rem;
           padding-top: 100px;
         }
